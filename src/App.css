@@ -1,38 +1,113 @@
+
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --extra: green;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.slider{
+  position: relative;
+  width: 70%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tittle{
+  font-size: 2rem;
 }
+
+article{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 3rem;
+  opacity: 0;
+}
+
+article.lastSlide{
+  transform: translateX(-100%);
+}
+article.activeSlide{
+  transform: translateX(0);
+  opacity: 1;
+}
+article.nextSlide{
+  transform: translateX(100%);
+}
+
+.person-img{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--extra);
+  margin-bottom: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;}
+
+.person-name{
+  color: var(--extra);
+  margin-bottom: 0.5rem;
+}
+
+.person-job{
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.person-description{
+  color: black;
+  text-align: center;
+  width: 80%;
+}
+
+.arrows{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon{
+  font-size: 2rem;
+  color: var(--extra)
+}
+
+.quotes{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.icon:hover{
+  cursor: pointer;
+}
+
+span{
+  margin-right: 1rem;
+  color: var(--extra)
+}
+
